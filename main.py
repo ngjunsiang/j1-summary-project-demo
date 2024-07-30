@@ -1,6 +1,8 @@
 # Import statements
 import mud
 
+import data
+
 if __name__ == "__main__":
     game = mud.Game()
     mud.welcome()
