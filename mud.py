@@ -21,7 +21,7 @@ class Game:
         """Add player to the game"""
         raise NotImplementedError
 
-    def execute(self, actions: list[Action]) -> None:
+    def execute(self, actions: list[action.Action]) -> None:
         """Carry out list of actions"""
         raise NotImplementedError
 
@@ -30,7 +30,7 @@ class Game:
         options = []
         return options
 
-    def get_actions(self, choice: str) -> list[Action]:
+    def get_actions(self, choice: str) -> list[action.Action]:
         """Return list of actions based on player choice"""
         actions = []
         return actions
