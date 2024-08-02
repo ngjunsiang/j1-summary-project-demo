@@ -4,6 +4,7 @@ Main module for the game.
 """
 
 import action
+import world
 
 def epilogue():
     print("Thanks for playing!")
@@ -14,12 +15,18 @@ def welcome():
 
 
 class Game:
-    def __init__(self):
-        pass
+    def __init__(self, spawn_point: str):
+        # Start location for added characters
+        self.spawn_point = spawn_point
+        # Track character locations
+        self.locations = {}
+        self.world = world.World()
 
-    def add_player(self, player):
+    def add_player(self, player, location: str = ""):
         """Add player to the game"""
-        raise NotImplementedError
+        # If location not provided, use spawn point
+        location = location or self.spawn_point
+        self.locations[player.name] = location
 
     def execute(self, actions: list[action.Action]) -> None:
         """Carry out list of actions"""
